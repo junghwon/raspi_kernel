@@ -44,8 +44,8 @@ static ssize_t myDevice_write (struct file *filp, const char __user *buf, size_t
 struct file_operations s_myDevice_fops = {
     .open = myDevice_open,
     .release = myDevice_close,
-    .read = myDevice_read;
-    .write = myDevice_write;
+    .read = myDevice_read,
+    .write = myDevice_write,
 };
 
 /* ロード(insmod)時に呼ばれる関数 */
