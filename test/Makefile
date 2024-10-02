@@ -1,6 +1,7 @@
+KERNEL_HEADERS=/lib/modules/$(shell uname -r)/build
 obj-m := test.o
 
 all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) modules
+	make -C $(KERNEL_HEADERS) M=$(shell pwd) modules
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) clean
+	make -C $(KERNEL_HEADERS) M=$(shell pwd) clean
